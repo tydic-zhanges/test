@@ -1,0 +1,76 @@
+package com.oak.java;
+/**
+ * 构造方法是在类中定义的方法， 但不同于其他的方法，
+   构造方法的定义有如下两点规则：
+     1、构造方法的名称必须与类名相同。 
+     2、构造方法没有返回值，但也不能写void。
+     语法：
+       [访问修饰符] 类名(){
+                  //构造方法体
+       } 
+
+构造方法其实就是为我们类中的成员变量 赋初始值的
+	构造方法之前我们没有定义，那为什么我们还可以创建对象，因为，你不写无参构造方法，
+	系统会默认给你生成一个无参构造方法
+	//建议：无参构造方法永远 自己去提供
+	 * 
+	 * ＊＊＊构造方法 其实就是为我们创建对象 提供的方法，但是之前我们并没有写构造方法
+	 * Persion p ＝ new Persion();  
+	 * new Persion();其实就是无参构造方法
+	 * 但是 之前我们并没去写这个无参构造方法，为什么也创建对象成功了呢？
+	 * 是因为 无参构造方法，如果我们不提供，系统也会为我们自动生成一个无参构造方法
+ * @author yujialei
+ *
+ */
+public class Demo4 {
+
+	public static void main(String[] args) {
+//		//创建对象
+//		GouZao g = new GouZao();//调用的无参构造方法
+//		g.show();
+//		GouZao g = new GouZao("张三");//调用有参构造方法
+//		
+//		g.show();
+//		GouZao g1 = new GouZao(22);
+//		g1.show();
+		GouZao g1 = new GouZao("隔壁老王",22);
+		g1.show();
+	}
+}
+
+class GouZao{
+	//成员变量
+	String name;
+	int age;
+	
+	/**
+	 * 以下方法为 构造方法的重载
+	 */
+	//无参构造方法 ，不声明无参构造方法时系统会默认为我们生成，建议：无参构造方法永远 自己去提供
+	public GouZao(){
+		System.out.println("这是无参构造方法");
+	}
+	
+	//有参构造方法
+	public GouZao(String name1){
+		System.out.println("这是一个String类型的有参构造方法"+name1);
+		name = name1; //初始化的时候 传入给 name1的参数，直接把值付给了name（成员变量）
+	}
+	
+	//有参构造方法
+	public GouZao(int age1){
+		System.out.println("这里是一个int 类型的有参构造方法"+age1);
+		age = age1; //此时的age 其实就是我们此类中的成员变量age
+		//就近原则，如果 age ＝ age；就是就近原则，把自己赋值给了自己，除非你让两个变量的名字不一样
+	}
+	//有参构造方法
+	public GouZao(String name1 , int age1){
+		System.out.println(name1+"这是一个有两个参数的 有参构造方法"+age1);
+		name = name1;
+		age = age1;
+	}
+	
+	public void show(){
+		System.out.println("这是 自定义的show 方法" + name +"----"+ age);
+	}
+}

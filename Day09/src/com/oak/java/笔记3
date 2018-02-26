@@ -1,0 +1,80 @@
+package com.oak.java;
+/**
+ * 类的组成：  
+ * 			成员变量（属性）
+ * 			方法（行为）
+ * 手机事物：
+ * 		属性：品牌，价格，颜色。。。。
+ * 		行为（方法）：打电话，发短信，玩游戏....
+ * 
+ * 
+ *封装成一个手机类：
+ *			成员变量：	品牌，价格，颜色
+ *			成员方法：打电话，发短信，玩游戏
+ * @author yujialei
+ *null----0---null
+ *引用数据类型：也是有初试值的，
+ *Phone p = new Phone();
+ *
+ *    p 这个对象名 其实就是我们这个Phone类的引用
+ *    p是存放在 栈内存，通过 内存地址，指向了 堆内存中，开辟出来的一块空间（new Phone）
+ *    既然是引用数据类型：那他的默认值就为null
+ *    为什么我们下面的程序成员变量现在是null：因为我们没有 对他赋值
+ *    ＊＊＊＊我们要想给成员变量赋值：＊＊＊
+ *    				1.创建 对象 Phone p = new Phone();
+ *    								p 就是对象名
+ *    				2. 直接使用 对象名.成员变量的方式直接赋值，和我们之前定义变量赋值是一样的
+ *    					p.price = 999;
+ *    
+ */
+public class Demo1 {
+	//这是一个测试类，用来测试手机功能的一个类
+	public static void main(String[] args) {
+		//int a = 10;
+		//创建手机对象
+		Phone p = new Phone();
+		//直接输出变量值
+		System.out.println(p.brand + "----"+ p.price + "---"+ p.color);
+		//给成员变量 赋值
+		p.brand = "诺基亚";
+		p.price = 999;
+		p.color ="红色";
+		//再次输出成员变量（会不会有值呢）
+		
+		//System.out.println(p.brand + "----"+ p.price + "---"+ p.color);
+		p.show();//测试我们phone 类里面 是否被我们把值赋过去了
+		
+	}
+	
+	
+}
+
+class Phone{
+	
+	//成员变量（手机特有的属性）
+	//品牌
+	String brand;
+	//价格
+	int price;
+	//颜色
+	String color;
+	
+	//成员方法
+	//手机可以打电话的方法，行为
+	public void call(){
+		System.out.println("打电话");
+	}
+	//手机发短信的行为方法
+	public void sendMessage(){
+		System.out.println("可以发短信");
+	}
+	//手机还可以做什么，还可以 打游戏
+	
+	public void playGame(){
+		System.out.println("手机可以打游戏");
+	}
+	
+	
+	public void show(){ //查看我们手机类中是否有值   传进来，诺基亚----999---红色
+		System.out.println(brand + "----"+ price + "---"+ color);
+	}

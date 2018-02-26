@@ -1,0 +1,50 @@
+package com.oak.java;
+/**
+ *  在构造方法中，用来初始化成员变量的参数一般和成员变量取相
+   	同的名字，这样会有利于代码的可读性，但此处就必须通过this
+   	关键字来区分成员变量和参数（不能省略this ）
+ * @author yujialei
+ *
+ */
+public class Demo5 {
+	public static void main(String[] args) {
+		//ThisDemo t = new ThisDemo();//默认使用的无参构造方法
+//		ThisDemo t = new ThisDemo("张三" , 12);//创建对象使用的是“有参构造方法，两个参数的”
+//				t.show();
+//				t.name = "sdsad";
+		ThisDemo t = new ThisDemo("zhanfsan");
+	}
+}
+
+
+class ThisDemo{
+	//成员变量
+	String name;
+	int age;
+
+	public ThisDemo(){
+		//this("历史",321);//this还可以调用其他的构造方法(没什么用)
+		System.out.println("这是无参构造方法");
+	}
+	public ThisDemo(String name){
+		this.name = name;
+		//this(21);
+		System.out.println("这是 String  有参构造方法"+ name);
+		
+	}
+	public ThisDemo(int age){
+		this.age = age;
+		System.out.println("这是 int 有参构造方法"+ age);
+	}
+	
+	public ThisDemo(String name , int age){
+		this.name = name;
+		this.age = age;
+		
+		System.out.println("有参构造方法，两个参数的"+ name +"----"+ age);
+	}
+	//自定义方法
+	public void show(){
+		System.out.println(name + "-----" +age);
+	}
+}

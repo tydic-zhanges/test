@@ -1,0 +1,62 @@
+package com.oak.java;
+/**
+ * 在类中的位置不同
+ * 成员变量：
+ * 			定义在类中，方法外面
+ * 局部变量：
+ * 			定义在方法内。
+ * 
+ * 在内存中的位置也不同
+ * 		成员变量：是在 堆内存中
+ * 		局部变量： 是在栈内存
+ * 生命周期不同
+ * 		成员变量：随着对象的创建而创建，随着对象的消失而消失
+ * 	当 堆内存中的new出来的东西 没有被对象在引用的时候，这时堆内存中就是垃圾对象，会被java回收（GC）
+ *  java底层 专门有一个垃圾回收机制，用来回收，不再被栈内存指向的对象，否则不回收，就会占用内存。
+ *  		局部变量：随着方法的调用而存在，随着方法的使用完毕而消失
+ *  
+ *  初始化值也不同：
+ *  			成员变量：没有默认初始值，所以我们在创建对象的时候 会使用有参构造方法进行初始化
+ *  			局部变量：没有默认初始值，必须定义的时候赋值在使用
+ *  
+ * 注意：成员变量可以和局部变量的名称一样，在方法使用的时候采用的是就近原则。
+ * @author yujialei
+ *
+ */
+public class Demo6 {
+	
+	
+	public static void main(String[] args) {
+		//int age = 10;//局部变量
+		
+//		int age;
+//		age = 10;
+		int age = 10;//局部变量
+		System.out.println(age);
+		JuBu j = new JuBu();//new 的无参构造方法
+		System.out.println();
+		j.show();
+		System.out.println("j.sum :"+j.sum);
+		
+	}
+}
+
+
+class JuBu{
+	String name;//成员变量
+	int sum ;//成员变量
+	
+	public void show(){
+		char gender;//局部变量
+		//int num;//声明了一个变量   //可以先声明，但是使用之前必须先赋值在使用
+		
+	//	System.out.println(num);
+		int num;
+		num = 10;
+		System.out.println(num);
+		
+	}
+	
+	
+	
+}

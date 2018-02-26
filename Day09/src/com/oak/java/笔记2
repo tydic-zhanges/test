@@ -1,0 +1,95 @@
+package com.oak.java;
+/**
+ * 事物对象：
+ * 			属性：
+ * 				事物对象的信息的描述（组成）
+ * 			方法： 
+ * 				事物对象的功能
+ * 类：		
+ * 		成员变量 ：
+ * 				事物的属性   
+ * 				
+ * 		成员方法：
+ * 				事物的系行为
+ * 定义一个类：
+ * 			其实就是描述一个对象，就是定义对象的成员变量和成员方法
+ * 	案例：
+ * 		我们来完成一个学生类的定义
+ * 		学生：就是对象
+ * 			
+ * 学生对象：
+ * 		属性：
+ * 			姓名，年龄，地址。。。。
+ * 		行为：
+ * 			学习，吃饭，睡觉
+ * 	把事物对象转成一个类来定义呢：
+ * 	
+ * 学生类：
+ * 		成员变量：
+ * 				姓名，年龄，地址
+ * 		成员方法：
+ * 				学习，吃饭，睡觉
+ * 
+ * 成员变量：
+ * 		和以前变量的定义是一样的格式，但是今天的位置不同，以前我们定义变量是在方法内
+ * 但是我们今天 变量的定义是在 （类里面，方法外定义的）
+ * 
+ * 成员方法：
+ * 		和以前定义方法是一样的 格式，但是今天 先把static 去掉
+ * 
+ * 首先 分析完毕后，我们需要定义一个学生类
+ * @author yujialei
+ *如何使用 学生类：
+ *			创建对象
+ *		如何使用成员变量：
+ *			对象名.变量名
+ *		如何使用成员方法：
+ *			对象名.方法名
+ */
+public class Demo2 {
+	public static void main(String[] args) {
+		//如何使用学生类呢
+		//1.创建对象去使用
+		Student s = new Student();
+		//2,如何使用成员变量
+			System.out.println(s.name);//null
+			System.out.println(s.age);//0
+			System.out.println(s.address);//null
+		//3.如何给成员变量 赋值   给 Student类型的成员变量赋值
+			s.name= "张三疯";
+			s.age = 200;
+			s.address = "蜀山区";
+			//输出成员变量的值
+			s.show();
+			s.study();
+			s.eat();
+			s.sleep();
+	}
+}
+class Student{
+	//定义变量
+	//姓名
+	String name;
+	//年龄
+	int age;
+	//地址
+	String address;
+	//定义你们的行为方法
+	//学习的方法
+	public void study(){
+		System.out.println(name +"学生在学习");
+	}
+	//学生可以吃饭的方法
+	
+	public void eat(){
+		System.out.println(name+"学生在吃饭");
+	}
+	//学生睡觉的方法
+	public void sleep(){
+		System.out.println(name+"你还睡觉啊，你不学习的么？");
+	}
+	//验证我们是否赋值成功
+	public void  show(){
+		System.out.println(name + age+ address);
+	}
+}
